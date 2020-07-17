@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Generator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="header">
+            <h1 class="subhead">The Great Number Game</h1>
+            <p class="subhead">Pick a number Between 1 and 10...</p>
+        </div>
+
+        <div id="maincontent">
+            
+            <div class="subcontent">
+                <h2>Choose your number!</h2>
+                <form action="/process_guess" method="POST">
+                    {% csrf_token %}
+                    Guess: <select name="user_guess">
+                        <option value="10">10</option>
+                        <option value="9">9</option>
+                        <option value="8">8</option>
+                        <option value="7">7</option>
+                        <option value="6">6</option>
+                        <option value="5">5</option>
+                        <option value="4">4</option>
+                        <option value="3">3</option>
+                        <option value="2">2</option>
+                        <option value="1">1</option>
+                        <option value="0">0</option>
+                    </select>
+                    Name: <input type="text" name="username">
+                    <input type="submit" value="Guess">
+                </form>
+            </div>
+
+            <div class="subcontent">
+                <h2>Result</h2>
+                <p class={{request.session.style}}></p>
+                {% for player in all_players %}
+                <P>{{ player.name }} {{ player.guess }} {{ player.result }}</P>
+                <p>{{ player.created_at }}</p>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

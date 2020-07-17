@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    background-color: bisque;
+    margin: 10px auto;
+    padding: 20px 20px;
+    width: 980px;
+    min-height: 500px;
+}
+.high{
+    color: red;
+}
+.low{
+    color: blue;
+}
+.right{
+    color: green;
+}
+.subhead{
+    display: inline-block;
+    color: coral;
+    margin: 60px;
+}
+#maincontent{
+    background-color: lightskyblue;
+    min-height: 400px;
+    margin: 25px;
+}
+.subcontent{
+    display: inline-block;
+    width: 370px;
+    vertical-align: top;
+    margin: 20px;
+    color: darkblue;
+    padding: 25px;
+    text-align: center;
+    background-color: honeydew;
+    min-height: 350px;
+}
